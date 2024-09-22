@@ -14,6 +14,7 @@ mypy 类型检查工具
             --warn-return-any, --no-implicit-reexport, --strict-equality, --extra-checks
     代码行尾加上 “# type: ignore” 可以忽略类型检查，注意 ignore 后面不要再加注释
 """
+
 import collections
 import re
 from typing import (
@@ -108,7 +109,9 @@ def process_numbers(numbers: List[int]) -> Tuple[int, int]:
 
 
 # NOTE: Union[str, None] 是否等价于 Optional[str]?
-def process_optional_numbers(numbers: Optional[List[int]] = None) -> Union[Tuple[int, int], None]:
+def process_optional_numbers(
+    numbers: Optional[List[int]] = None,
+) -> Union[Tuple[int, int], None]:
     if numbers:
         return min(numbers), max(numbers)
     return None
@@ -156,7 +159,9 @@ word_count = get_word_count()
 words = ["apple", "banana", "apple", "orange", "banana", "apple"]
 for word in words:
     word_count[word] += 1
-print(">>>line160: ", word_count)  # defaultdict(<class 'int'>, {'apple': 3, 'banana': 2, 'orange': 1})
+print(
+    ">>>line160: ", word_count
+)  # defaultdict(<class 'int'>, {'apple': 3, 'banana': 2, 'orange': 1})
 
 
 # NOTE: Counter - 统计元素出现的次数，strict 模式下，需要详细 List 内部的类型
@@ -164,7 +169,9 @@ def count_elements(elements: List) -> Counter[str]:
     return collections.Counter(elements)
 
 
-element_counts = count_elements(["apple", "banana", "apple", "orange", "banana", "apple"])
+element_counts = count_elements(
+    ["apple", "banana", "apple", "orange", "banana", "apple"]
+)
 print(">>>line169: ", element_counts)  # Counter({'apple': 3, 'banana': 2, 'orange': 1})
 
 
@@ -309,7 +316,9 @@ class Movie(TypedDict):
 
 
 movie: Movie = {"name": "The Matrix", "year": 1999, "rating": 8.7, "watched": True}
-print(">>>line313: ", movie)  # {'name': 'The Matrix', 'year': 1999, 'rating': 8.7, 'watched': True}
+print(
+    ">>>line313: ", movie
+)  # {'name': 'The Matrix', 'year': 1999, 'rating': 8.7, 'watched': True}
 
 
 # NOTE: TypeGuard - 类型保护
@@ -338,7 +347,9 @@ def get_first_element(items: List[T1]) -> T1:
 first_element = get_first_element([1, 2, 3])
 
 
-def apply_function(func: Callable[[int, int], int], numbers: Sequence[int]) -> List[int]:
+def apply_function(
+    func: Callable[[int, int], int], numbers: Sequence[int]
+) -> List[int]:
     return [func(num, num) for num in numbers]
 
 
@@ -400,7 +411,9 @@ IUserId = TypeVar("IUserId", int, str)
 IUsername = TypeVar("IUsername", str, bytes)
 
 
-def get_user_details(user_id: IUserId, username: IUsername) -> Tuple[IUserId, IUsername]:
+def get_user_details(
+    user_id: IUserId, username: IUsername
+) -> Tuple[IUserId, IUsername]:
     return user_id, username
 
 
