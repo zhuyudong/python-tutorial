@@ -5,14 +5,12 @@ build-backend = "hatchling.build"
 [project]
 name = "python-tutorial"
 dynamic = ["version"]
-description = ''
+description = ""
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 license = "MIT"
 keywords = []
-authors = [
-  { name = "Yudong.zhu", email = "yudong8.zhu@gmail.com" },
-]
+authors = [{ name = "Yudong.zhu", email = "yudong8.zhu@gmail.com" }]
 classifiers = [
   "Development Status :: 4 - Beta",
   "Programming Language :: Python",
@@ -32,12 +30,10 @@ Issues = "https://github.com/Yudong.zhu/python-tutorial/issues"
 Source = "https://github.com/Yudong.zhu/python-tutorial"
 
 [tool.hatch.version]
-path = "src/python_tutorial/__about__.py"
+path = "python_tutorial/__init__.py"
 
 [tool.hatch.envs.types]
-extra-dependencies = [
-  "mypy>=1.0.0",
-]
+extra-dependencies = ["mypy>=1.0.0"]
 [tool.hatch.envs.types.scripts]
 check = "mypy --install-types --non-interactive {args:src/python_tutorial tests}"
 
@@ -45,17 +41,25 @@ check = "mypy --install-types --non-interactive {args:src/python_tutorial tests}
 source_pkgs = ["python_tutorial", "tests"]
 branch = true
 parallel = true
-omit = [
-  "src/python_tutorial/__about__.py",
-]
+omit = ["src/python_tutorial/__about__.py"]
 
 [tool.coverage.paths]
-python_tutorial = ["src/python_tutorial", "*/python-tutorial/src/python_tutorial"]
+python_tutorial = [
+  "src/python_tutorial",
+  "*/python-tutorial/src/python_tutorial",
+]
 tests = ["tests", "*/python-tutorial/tests"]
 
 [tool.coverage.report]
-exclude_lines = [
-  "no cov",
-  "if __name__ == .__main__.:",
-  "if TYPE_CHECKING:",
-]
+exclude_lines = ["no cov", "if __name__ == .__main__.:", "if TYPE_CHECKING:"]
+
+[tool.ruff]
+line-length = 90
+indent-width = 2
+
+# Target Python 3.12
+target-version = "py312"
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"

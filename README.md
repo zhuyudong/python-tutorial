@@ -54,6 +54,13 @@ hatch --help
 hatch new --init # generated pyproject.toml
 ```
 
+## develop
+
+```sh
+pip install "fastapi[standard]"
+fastapi dev fastapi_examples/basic.py
+```
+
 ## reference
 
 - [python](https://www.python.org/downloads/)
