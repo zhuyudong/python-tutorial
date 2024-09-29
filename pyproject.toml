@@ -55,11 +55,11 @@ exclude_lines = ["no cov", "if __name__ == .__main__.:", "if TYPE_CHECKING:"]
 
 [tool.ruff]
 line-length = 90
-indent-width = 2
+indent-width = 4
 
 # Target Python 3.12
 target-version = "py312"
 
 [tool.ruff.format]
-quote-style = "single"
+quote-style = "double"
 indent-style = "space"

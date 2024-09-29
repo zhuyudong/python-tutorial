@@ -21,9 +21,7 @@ print(d.strftime("%Y-%m-%d %H:%M:%S %p"))  # 2024-09-09 22:28:12 PM
 print(d.strftime("%Y-%m-%d %H:%M:%S %p %Z"))  # 2024-09-09 22:28:12 PM
 print(d.strftime("%Y-%m-%d %H:%M:%S %p %z"))  # 2024-09-09 22:28:12 PM +0000
 print(d.strftime("%Y-%m-%d %H:%M:%S %p %Z %z"))  # 2024-09-09 22:28:12 PM UTC +0000
-print(
-    d.strftime("%Y-%m-%d %H:%M:%S %p %Z %z %j")
-)  # 2024-09-09 22:28:12 PM UTC +0000 189
+print(d.strftime("%Y-%m-%d %H:%M:%S %p %Z %z %j"))  # 2024-09-09 22:28:12 PM UTC +0000 189
 print(
     d.strftime("%Y-%m-%d %H:%M:%S %p %Z %z %j %U")
 )  # 2024-09-09 22:28:12 PM UTC +0000 189 27
@@ -64,9 +62,7 @@ print(
     d.strftime("%Y-%m-%d %H:%M:%S %p %Z %z %j %U %W %w %a %A %b %B %c %x %X %f %z %Z")
 )  # 2024-09-09 22:28:12 PM UTC +0000 189 27 27 1 Tue Tuesday Jul July Tue Jul  7 15:00:00 2020 15:00:00 000000 +0000 UTC
 print(
-    d.strftime(
-        "%Y-%m-%d %H:%M:%S %p %Z %z %j %U %W %w %a %A %b %B %c %x %X %f %z %Z %Z"
-    )
+    d.strftime("%Y-%m-%d %H:%M:%S %p %Z %z %j %U %W %w %a %A %b %B %c %x %X %f %z %Z %Z")
 )  # 2024-09-09 22:28:12 PM UTC +0000 189 27 27 1 Tue Tuesday Jul July Tue Jul  7 15:00:00 2020 15:00:00 000000 +0000 UTC UTC
 
 

@@ -51,6 +51,7 @@ from typing import (
     TypeVar,
     Union,
 )
+
 ################################################################
 # 基本类型
 ################################################################
@@ -169,9 +170,7 @@ def count_elements(elements: List) -> Counter[str]:
     return collections.Counter(elements)
 
 
-element_counts = count_elements(
-    ["apple", "banana", "apple", "orange", "banana", "apple"]
-)
+element_counts = count_elements(["apple", "banana", "apple", "orange", "banana", "apple"])
 print(">>>line169: ", element_counts)  # Counter({'apple': 3, 'banana': 2, 'orange': 1})
 
 
@@ -347,9 +346,7 @@ def get_first_element(items: List[T1]) -> T1:
 first_element = get_first_element([1, 2, 3])
 
 
-def apply_function(
-    func: Callable[[int, int], int], numbers: Sequence[int]
-) -> List[int]:
+def apply_function(func: Callable[[int, int], int], numbers: Sequence[int]) -> List[int]:
     return [func(num, num) for num in numbers]
 
 
@@ -411,9 +408,7 @@ IUserId = TypeVar("IUserId", int, str)
 IUsername = TypeVar("IUsername", str, bytes)
 
 
-def get_user_details(
-    user_id: IUserId, username: IUsername
-) -> Tuple[IUserId, IUsername]:
+def get_user_details(user_id: IUserId, username: IUsername) -> Tuple[IUserId, IUsername]:
     return user_id, username
 
 
