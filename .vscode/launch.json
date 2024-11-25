@@ -1,0 +1,76 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Portal APIs",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "cwd": "${workspaceFolder}",
+      "args": [
+        "portal.app.main:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--reload",
+        "--log-level=debug",
+        // "--reload-dir=portal",
+        // "--reload-include=portal/**/*.py"
+        // "--reload-exclude=venv"
+        // "--no-access-log"
+      ],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}",
+        // "env": "production",
+        // "ENVIRONMENT": "production"
+        // "MONGODB_HOST": "localhost",
+        // "MONGODB_PORT": "27017",
+        // "MONGODB_DB": "bigdata",
+      },
+      "jinja": true,
+      "justMyCode": false
+    },
+    {
+      "name": "Current File",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "console": "internalConsole",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}",
+      },
+    },
+    {
+      "name": "Pytest",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "cwd": "${workspaceFolder}",
+      // "args": ["-vv"]
+      "args": ["tests/api/endpoints/test_roles.py", "-vv"]
+    },
+    {
+      "name": "Pytest sqlalchemy middleware",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "cwd": "${workspaceFolder}",
+      "args": ["packages/fastapi_async_sqlalchemy/tests", "-vv"],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}",
+      },
+    },
+    {
+      "name": "Pytest pretty errors middleware",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "cwd": "${workspaceFolder}",
+      "args": ["packages/fastapi_pretty_erros/tests", "-s", "-vv"],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}",
+      },
+    }
+  ]
+}

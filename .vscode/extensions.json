@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "charliermarsh.ruff",
+    "ms-python.debugpy",
+    "kevinrose.vsc-python-indent",
+    "donjayamanne.python-environment-manager",
+    // "ms-python.black-formatter",
+    // "ms-python.isort",
+    // "ms-python.flake8"
+  ]
+}
